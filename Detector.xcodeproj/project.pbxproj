@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ADB2B95164B63BC6D7B6A509 /* Pods_Detector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6091ADBC2133F3BF0628AA78 /* Pods_Detector.framework */; };
 		ADD1D555248B504B003279CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD1D554248B504B003279CF /* AppDelegate.swift */; };
 		ADD1D557248B504B003279CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD1D556248B504B003279CF /* SceneDelegate.swift */; };
 		ADD1D559248B504B003279CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD1D558248B504B003279CF /* ViewController.swift */; };
 		ADD1D55C248B504B003279CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADD1D55A248B504B003279CF /* Main.storyboard */; };
 		ADD1D55E248B504D003279CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADD1D55D248B504D003279CF /* Assets.xcassets */; };
 		ADD1D561248B504D003279CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADD1D55F248B504D003279CF /* LaunchScreen.storyboard */; };
+		ADD1D569248B50C5003279CF /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = ADD1D568248B50C5003279CF /* Inceptionv3.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6091ADBC2133F3BF0628AA78 /* Pods_Detector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Detector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DB93040677E08D199AD1E91 /* Pods-Detector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Detector.debug.xcconfig"; path = "Target Support Files/Pods-Detector/Pods-Detector.debug.xcconfig"; sourceTree = "<group>"; };
 		ADD1D551248B504B003279CF /* Detector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Detector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADD1D554248B504B003279CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADD1D556248B504B003279CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +28,8 @@
 		ADD1D55D248B504D003279CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADD1D560248B504D003279CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ADD1D562248B504D003279CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADD1D568248B50C5003279CF /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
+		FA66763893F695268882E985 /* Pods-Detector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Detector.release.xcconfig"; path = "Target Support Files/Pods-Detector/Pods-Detector.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADB2B95164B63BC6D7B6A509 /* Pods_Detector.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		193F36290353153CC3300F35 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7DB93040677E08D199AD1E91 /* Pods-Detector.debug.xcconfig */,
+				FA66763893F695268882E985 /* Pods-Detector.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		4429F80F9C3DC08C08B97FEE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6091ADBC2133F3BF0628AA78 /* Pods_Detector.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ADD1D548248B504B003279CF = {
 			isa = PBXGroup;
 			children = (
 				ADD1D553248B504B003279CF /* Detector */,
 				ADD1D552248B504B003279CF /* Products */,
+				193F36290353153CC3300F35 /* Pods */,
+				4429F80F9C3DC08C08B97FEE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,6 +90,7 @@
 				ADD1D55D248B504D003279CF /* Assets.xcassets */,
 				ADD1D55F248B504D003279CF /* LaunchScreen.storyboard */,
 				ADD1D562248B504D003279CF /* Info.plist */,
+				ADD1D568248B50C5003279CF /* Inceptionv3.mlmodel */,
 			);
 			path = Detector;
 			sourceTree = "<group>";
@@ -74,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ADD1D565248B504D003279CF /* Build configuration list for PBXNativeTarget "Detector" */;
 			buildPhases = (
+				D50A908D72E894E5727A0780 /* [CP] Check Pods Manifest.lock */,
 				ADD1D54D248B504B003279CF /* Sources */,
 				ADD1D54E248B504B003279CF /* Frameworks */,
 				ADD1D54F248B504B003279CF /* Resources */,
+				D9E9BCCEE4431A2AE4D1F4B3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,12 +163,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D50A908D72E894E5727A0780 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Detector-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9E9BCCEE4431A2AE4D1F4B3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Detector/Pods-Detector-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Detector/Pods-Detector-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Detector/Pods-Detector-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ADD1D54D248B504B003279CF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				ADD1D559248B504B003279CF /* ViewController.swift in Sources */,
+				ADD1D569248B50C5003279CF /* Inceptionv3.mlmodel in Sources */,
 				ADD1D555248B504B003279CF /* AppDelegate.swift in Sources */,
 				ADD1D557248B504B003279CF /* SceneDelegate.swift in Sources */,
 			);
@@ -282,6 +355,7 @@
 		};
 		ADD1D566248B504D003279CF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DB93040677E08D199AD1E91 /* Pods-Detector.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,6 +373,7 @@
 		};
 		ADD1D567248B504D003279CF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA66763893F695268882E985 /* Pods-Detector.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
