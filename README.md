@@ -1,5 +1,5 @@
 # 🔍 Detector
-A simple app using CoreML to detect images.
+A simple app using CoreML to detect images. Then showing a short description from Wikipedia API
 
 ## Preview
 ### Home
