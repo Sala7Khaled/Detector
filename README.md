@@ -11,5 +11,5 @@ A simple app using CoreML to detect images. Then showing a short description fro
 ### 🛠 Update v0.2 (Description)
 <img src="/screenshot/6.png" alt="Demo" height="600px"/> <img src="/screenshot/7.png" alt="Demo" height="600px"/>
 
-###  Update v0.2 (Profile Image)
+###  Update v0.3 (Profile Picture)
 <img src="/screenshot/9.png" alt="Demo" height="600px"/> <img src="/screenshot/8.png" alt="Demo" height="600px"/>
