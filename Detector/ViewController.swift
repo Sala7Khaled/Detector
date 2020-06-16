@@ -12,12 +12,15 @@ import Vision
 import Social
 import Alamofire
 import SwiftyJSON
+import SDWebImage
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var viewDesc: UIView!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var viewImage: UIView!
     @IBOutlet weak var descLabel: UILabel!
+    @IBOutlet weak var thumbImage: UIImageView!
     
     let wikipediaURl = "https://en.wikipedia.org/w/api.php"
     var classificationResults : [VNClassificationObservation] = []
@@ -33,6 +36,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
 
     private func setupView() {
+        viewImage.layer.cornerRadius = 10.0
         viewDesc.layer.cornerRadius = 10.0
     }
     
@@ -56,6 +60,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 self.navigationController?.navigationBar.isTranslucent = false
             }
             
+        
         }
         
         let handler = VNImageRequestHandler(ciImage: image)
@@ -73,12 +78,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let parameters : [String:String] = [
         "format" : "json",
         "action" : "query",
-        "prop" : "extracts",
+        "prop" : "extracts|pageimages",
         "exintro" : "",
         "explaintext" : "",
         "titles" : imageName,
         "indexpageids" : "",
         "redirects" : "1",
+        "pithumbsize" : "500",
         ]
         
         Alamofire.request(wikipediaURl, method: .get, parameters: parameters).responseJSON { (response) in
@@ -89,14 +95,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 let imageDesc = imageJson["query"]["pages"][pageID]["extract"].stringValue
                 
                 print("response: \(response)")
-                print("imageJson: \(imageJson)")
-                print("pageID: \(pageID)")
-                print("imageDesc: \(imageDesc)" )
-                
                 
                 self.descLabel.text = imageDesc
                 self.descLabel.isHidden = false
                 self.viewDesc.isHidden = false
+                self.viewImage.isHidden = false
+                self.thumbImage.isHidden = false
+                
+                let thumbURL = imageJson["query"]["pages"][pageID]["thumbnail"]["source"].stringValue
+                self.thumbImage.sd_setImage(with: URL(string: thumbURL))
+                
             }
         }
     }
